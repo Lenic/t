@@ -1,6 +1,6 @@
 {
-  "name": "t",
-  "version": "1.0.0",
+  "name": "td-js",
+  "version": "1.0.3",
   "description": "command line for todo list.",
   "main": "index.js",
   "scripts": {
@@ -11,6 +11,9 @@
     "todo",
     "console"
   ],
+  "bin": {
+    "t": "./index.js"
+  },
   "author": "Lenic",
   "license": "MIT",
   "dependencies": {

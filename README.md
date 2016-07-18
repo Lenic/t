@@ -147,4 +147,8 @@ todo list help:
 
     Will be delete all items, and will show none.
 
-Now, can you?
+Now, you can use it:
+
+```
+npm install -g td-js
+```
