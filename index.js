@@ -30,6 +30,6 @@ function doProcess() {
   } else if (args[0] === '-d' || args[0] === '--delete') {
     toolkit.delete(args[1]);
   } else {
-    toolkit.addNew(args.join(''));
+    toolkit.addNew(args.join(' '));
   }
 };

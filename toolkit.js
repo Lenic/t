@@ -66,7 +66,7 @@ exports.delete = function(fileName) {
 };
 
 exports.addNew = function (msg) {
-  toolkit.getAllFiles(files => {
+  exports.getAllFiles(files => {
     var lastItem = _.chain(files)
                     .map(path.parse)
                     .map(p => parseInt(p.name))
@@ -81,6 +81,7 @@ exports.addNew = function (msg) {
       fs.write(fd, msg, innerError => {
         if (innerError) throw innerError;
 
+        console.log();
         console.log('    %s', newFileName.yellow.bold);
 
         fs.close(fd);
