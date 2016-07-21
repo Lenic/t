@@ -52,7 +52,8 @@ exports.delete = function(fileName) {
         if (err) throw err;
       });
     } else {
-      fs.exists(fileFullName + constant.doneSymbol, innerExists => {
+      fileFullName += constant.doneSymbol;
+      fs.exists(fileFullName, innerExists => {
         if (innerExists) {
           fs.unlink(fileFullName, err => {
             if (err) throw err;

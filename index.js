@@ -9,18 +9,16 @@ var constant = require('./constant');
 var toolkit = require('./toolkit');
 
 var args = constant.arguments;
-if (!args.length || args[0] === '-h' || args[0] === '--help') {
-  console.log(constant.helpMessage);
-  return;
-}
-
 fs.exists(constant.basename, exists =>
   exists ? doProcess() : fs.mkdir(constant.basename, 0o700, doProcess));
 
 function doProcess() {
-  if (args[0] === '-l' || args[0] === '--list') {
+
+  if (args.length === 0 || args[0] === '-l' || args[0] === '--list') {
     toolkit.getAllFiles(files => toolkit.printFiles(
       _.chain(files).map(path.parse).filter(p => p.ext === '').value()));
+  } else if (!args.length || args[0] === '-h' || args[0] === '--help') {
+    console.log(constant.helpMessage);
   } else if (args[0] === '-a' || args[0] === '--all') {
     toolkit.getAllFiles(files => toolkit.printFiles(_.map(files, path.parse)));
   } else if (args[0] === '--clear') {

@@ -4,17 +4,17 @@ var path = require('path');
 exports.helpMessage = `
 todo list help:
 
-  no parameter, -h, --help:
+  -h, --help:
 
     show this help.
+
+  no parameter, -l, --list:
+
+    show uncompoleted items.
 
   your todo text:
 
     add new todo and return identity.
-
-  -l, --list:
-
-    show uncompoleted items.
 
   -a, --all:
 
